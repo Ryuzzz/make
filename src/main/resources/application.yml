@@ -30,6 +30,22 @@ spring:
         event-out:
           destination: coffee
           contentType: application/json
+feign:
+  order:
+    url: localhost:8081
+  make:
+    url: localhost:8082
+  complete:
+    url: localhost:8083
+  showStatus:
+    url: localhost:8084
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
 
 logging:
   level:
@@ -62,3 +78,12 @@ spring:
         event-out:
           destination: coffee
           contentType: application/json
+feign:
+  order:
+    url: order:8080
+  make:
+    url: make:8080
+  complete:
+    url: complete:8080
+  showStatus:
+    url: showStatus:8080
